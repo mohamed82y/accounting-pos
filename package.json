@@ -1,0 +1,50 @@
+{
+  "name": "accounting-pos",
+  "version": "1.0.0",
+  "description": "نظام محاسبة ونقطة بيع",
+  "scripts": {
+    "start": "node --no-warnings server.js",
+    "desktop": "electron .",
+    "dist:win": "electron-builder --win"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "main": "main.js",
+  "build": {
+    "appId": "com.hala.accounting",
+    "productName": "Accounting POS",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "server.js",
+      "main.js",
+      "public/**",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "public/icon.png",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "language": "1025"
+    }
+  },
+  "devDependencies": {
+    "electron": "^45.5.0",
+    "electron-builder": "^26.18.0"
+  }
+}
